@@ -74,6 +74,7 @@ page[size="A4"] {
     filter: grayscale(100%); /* Convert the image to black and white */
     max-width: 150px;   /* Adjusts the maximum width to a size that fits well */
     border-radius: 50%;
+    object-fit: cover; /* Keeps the center of the image while resizing */
 }
 
 .containerPage1 .leftPanel .imgBx {
