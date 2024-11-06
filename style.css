@@ -263,6 +263,7 @@ page[size="A4"] {
     color: #333;
     margin-bottom: 20px; /* Space below header */
     font-size: 0.9em;
+    margin-top: 20px;
 } 
 
 
