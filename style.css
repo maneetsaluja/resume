@@ -583,6 +583,7 @@ ul.interest li h5 a:hover {
     color: #333; /* Ensure color is black */
     margin: 0;
     width: 100%;
+    margin-top: 30px;
 }
 
 .containerPage2 .rightPanel h3.title-spacing::after {
