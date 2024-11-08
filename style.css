@@ -17,8 +17,12 @@
     .containerPage2 .rightPanel {
         width: 100%;
     }
-    .containerPage1 .imgBx .box {
+    /*.containerPage1 .imgBx .box {
         width: 50%;
+    }*/
+    .profile-pic {
+        width: 50%;
+        max-width: 100px; /* Adjust for smaller screens */
     }
 }
 
@@ -193,7 +197,6 @@ page[size="A4"] {
     margin: 0.2cm 0; /* Minimal spacing between contact items */
     line-height: 1em;
     color: #fff;
-    cursor: pointer;
     display: flex;
     font-weight: 300;
 }
@@ -209,7 +212,6 @@ page[size="A4"] {
     margin: 0.2cm 0; /* Minimal spacing between contact items */
     line-height: 1em;
     color: #fff;
-    cursor: pointer;
     display: flex;
     font-weight: 300;
 }
@@ -238,16 +240,17 @@ page[size="A4"] {
 } 
 
 
-.containerPage1 .rightPanel .title-spacing {
+.containerPage1 .rightPanel h3.title-spacing {
     position: relative;
     padding-bottom: 8px; /* Consistent padding for both headings */
     line-height: 1.2; /* Ensures consistent line spacing */
     font-size: 18px; /* Consistent font size */
     font-weight: bold;
     margin: 0; /* Remove extra margins */
+    width: 100%;
 }
 
-.containerPage1 .rightPanel .title-spacing::after {
+.containerPage1 .rightPanel h3.title-spacing::after {
     content: "";
     position: absolute;
     left: 0;
@@ -256,6 +259,8 @@ page[size="A4"] {
     height: 3px; /* Thickness of the underline */
     background-color: black; /* Color of the underline */
     width: 100%; /* Full width underline */
+    box-sizing: border-box;
+    border-bottom: 4px solid black;
 }
 
 
@@ -310,6 +315,26 @@ page[size="A4"] {
     margin-bottom: 1cm;
 }
 
+
+
+
+/* Keep link color as black at all times */
+.containerPage1 .rightPanel .work .box .year_company .company a {
+    color: #333; /* Set link color to black */
+    text-decoration: none; /* Remove underline */
+}
+
+/* Prevent the color change on hover */
+.containerPage1 .rightPanel .work .box .year_company .company a:hover {
+    color: #333; /* Keep the color black even on hover */
+    text-decoration: underline; /* Remove underline on hover */
+}
+
+/* Prevent the color change when the link is clicked (active state) */
+.containerPage1 .rightPanel .work .box .year_company .company a:active {
+    color: #333; /* Keep the color black when clicked */
+    text-decoration: none; /* Remove underline on click */
+}
 
 
 
@@ -440,17 +465,25 @@ page[size="A4"] {
 
 
 
-
 .item.bottomLineSeparator h4 {
     margin-bottom: 0.5cm; /* Space between the header and the line */
 }
 
+
+
 .containerPage2 .leftPanel .details .language
 {
-    margin: 0; /* Reset margin to prevent extra space */
+    list-style: none; /* Remove bullets */
+    padding: 0;
+    margin: 0;
 }
 
-.containerPage2 .leftPanel .details .language h5
+.language li {
+    display: flex; /* Align items in a row */
+    gap: 0.2em; /* Optional spacing between items */
+}
+
+.containerPage2 .leftPanel .details .language li h5
 {
     list-style: none;
     margin: 0.2cm 0; /* Minimal spacing between contact items */
@@ -461,9 +494,45 @@ page[size="A4"] {
     font-weight: 300;
 }
 
+.language li span.separator {
+    list-style: none;
+    margin: 0.2cm 0; /* Minimal spacing between contact items */
+    line-height: 1em;
+    color: #fff;
+    display: flex;
+    font-weight: 300;
+    font-size: 0.8em;
+}
+
+
+
+
 .containerPage2 .leftPanel .details .interest
 {
     margin: 0; /* Reset margin to prevent extra space */
+    list-style: none;
+}
+
+.containerPage2 .leftPanel .details .interest li h5
+{
+    list-style: none;
+    margin: 0.2cm 0; /* Minimal spacing between contact items */
+    line-height: 1em;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    font-weight: 300;
+}
+
+/* Optional: Style for links inside h5 */
+.containerPage2 .leftPanel .details .interest li h5 a {
+    color: #fff; /* Link color */
+    text-decoration: none; /* Remove underline */
+}
+
+ul.interest li h5 a:hover {
+    color: #ddd; /* Light gray on hover */
+    text-decoration: underline !important;
 }
 
 .containerPage2 .leftPanel .details .interest h5
@@ -488,61 +557,69 @@ page[size="A4"] {
     margin: 0.2cm 0; /* Minimal spacing between contact items */
     line-height: 1em;
     color: #fff;
-    cursor: pointer;
     display: flex;
     font-weight: 300;
 }
 
-.containerPage2 .rightPanel 
-{
+
+
+
+
+.containerPage2 .rightPanel {
     width: 70%;
     padding: 0.7cm;
-    background-color: #f4f4f4; /* Light background for contrast */
-    border-radius: 5px; /* Slightly round the corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    background-color: #f4f4f4;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-
-.containerPage2 .rightPanel .title-spacing {
+/* Apply the same style to Page 2 Titles (ACADEMICS and PROJECTS) */
+.containerPage2 .rightPanel h3.title-spacing {
     position: relative;
-    padding-bottom: 5px; /* Adjust padding as needed */
-    margin-top: 1.4em;
-    margin-bottom: 1em; /* Adjust this value for more or less space */
+    padding-bottom: 8px; /* Match padding with Page 1 */
+    line-height: 1.2; /* Match line height with Page 1 */
+    font-size: 18px; /* Match font size with Page 1 */
+    font-weight: bold; /* Ensure bold font weight */
+    color: #333; /* Ensure color is black */
+    margin: 0;
+    width: 100%;
 }
 
-.containerPage2 .rightPanel .title-spacing::after {
+.containerPage2 .rightPanel h3.title-spacing::after {
     content: "";
     position: absolute;
     left: 0;
     right: 0;
     bottom: 0;
-    height: 3px; /* Adjust thickness here */
+    height: 3px;
     background-color: black;
+    width: 100%;
+    box-sizing: border-box;
+    border-bottom: 4px solid black;
 }
 
 
 
 
 
-.containerPage2 .rightPanel .education
-{
-    text-align: justify; /* Center align the header */
+
+.containerPage2 .rightPanel .education {
+    text-align: justify;
     color: #333;
-    margin-bottom: 20px; /* Space below header */
     font-size: 0.9em;
-} 
-
-
-
-
-
-
-
-.containerPage2 .rightPanel .education 
-{
-    margin-top: 0.5cm; /* Space above the work section */
+    margin-top: 0.5cm;
     margin-bottom: 30px;
 }
+
+
+
+
+
+
+
+
+
+
 
 .containerPage2 .rightPanel .education .box .year_course
 {
@@ -580,6 +657,26 @@ page[size="A4"] {
 }
 
 
+/* Keep link color as black at all times */
+.containerPage2 .rightPanel .education .box .year_course .course a {
+    color: #333; /* Set link color to black */
+    text-decoration: none; /* Remove underline */
+}
+
+/* Prevent the color change on hover */
+.containerPage2 .rightPanel .education .box .year_course .course a:hover {
+    color: #333; /* Keep the color black even on hover */
+    text-decoration: underline; /* Remove underline on hover */
+}
+
+/* Prevent the color change when the link is clicked (active state) */
+.containerPage2 .rightPanel .education .box .year_course .course a:active {
+    color: #333; /* Keep the color black when clicked */
+    text-decoration: none; /* Remove underline on click */
+}
+
+
+
 
 
 .containerPage2 .rightPanel .projects 
@@ -588,19 +685,46 @@ page[size="A4"] {
     margin-bottom: 0;
 }
 
-.containerPage2 .rightPanel .projects .box .topic_type
-{
-    display: flex; /* Use flexbox to align items */
-    justify-content: space-between; /* Space between items */
-    align-items: center; /* Center vertically */
-    margin-bottom: 0; /* Space below each year/company section */
+
+/* Box styling to remove any extra margin */
+.containerPage2 .rightPanel .projects .box {
+    margin: 0;
+    padding: 0;
+    margin-bottom: -10px;
 }
 
-.containerPage2 .rightPanel .projects .box .topic_type h5
+
+.containerPage2 .rightPanel .projects .box .topic_type
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.containerPage2 .rightPanel .projects .box .topic_type .topic {
+    margin: 0;
+    padding: 0;
+}
+
+.containerPage2 .rightPanel .projects .box .topic_type .type {
+    margin: 0; /* Remove default margin */
+    text-align: right; /* Align the text of the type to the right */
+}
+
+
+
+.containerPage2 .rightPanel .projects .box .topic_type .topic a
 {
     font-size: 14px;
     color: #333;
-    margin-bottom: 0;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    display: block;
+    text-align: left;
 }
 
 .containerPage2 .rightPanel .projects .box .text h4
@@ -611,12 +735,12 @@ page[size="A4"] {
     margin-bottom: 0;
 }
 
-.containerPage2 .rightPanel .projects .box .text
-{
-    text-align: justify;;
-    color: #333; 
-    margin-bottom: 20px; /* Space below header */
+/* Styling for the project description text */
+.containerPage2 .rightPanel .projects .box .text {
+    text-align: justify;
+    color: #333;
     font-size: 0.9em;
+    margin: 0 0 20px 0;
 }
 
 .containerPage2 .rightPanel .projects .box {
